@@ -7,7 +7,7 @@ Character::Character()
 	m_health = 0;
 }
 
-Character::Character(float health, Movement* characterMove)
+Character::Character(float health, MovementComponent* characterMove)
 {
 	m_health = health;
 }

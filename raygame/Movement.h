@@ -3,11 +3,11 @@
 #include <Vector2.h>
 class Actor;
 
-class Movement :
+class MovementComponent :
 	public Component
 {
 public:
-	Movement(float speed, Actor* owner);
+	MovementComponent(float speed, Actor* owner);
 
 
 	MathLibrary::Vector2 getVelocity() { return m_velocity; }
