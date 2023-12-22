@@ -5,17 +5,20 @@
 
 class Player :
 	public Character
+	
 {
 public:
 		
 	void update(float deltaTime) override;
 
+	Player(float health, MovementComponent* MoveComponent);
 
 
 
 
 
 
+private:
 
 };
 

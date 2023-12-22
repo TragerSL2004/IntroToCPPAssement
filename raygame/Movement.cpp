@@ -3,7 +3,7 @@
 #include "Movement.h"
 #include "Actor.h"
 
-MovementComponent::MovementComponent(float Speed, Actor* owner) : Component(owner, "Movement")
+MovementComponent::MovementComponent(float Speed, Actor* owner) : Component(owner, "MovementComponent")
 {
 	m_speed = Speed;
 }
