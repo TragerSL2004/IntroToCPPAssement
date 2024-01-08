@@ -1,9 +1,11 @@
 #include "raylib.h"
 #include "Player.h"
+#include <iostream>
 #include "Transform2D.h"
 
-Player::Player(float health, MovementComponent* MoveComponent)
+Player::Player(float health, MovementComponent* MoveComponent, float movementspeed)
 {
+	m_moveSpeed = movementspeed;
 }
 
 void Player::update(float deltaTime)
@@ -13,29 +15,45 @@ void Player::update(float deltaTime)
 
 	MovementComponent* moveComponent = (MovementComponent*)getComponent("MovementComponent");
 
-	Vector2 velocity = moveComponent->getVelocity();
+	MathLibrary::Vector2 velocity = moveComponent->getVelocity();
+	MathLibrary::Vector2 direction = MathLibrary::Vector2(0, 0);
+	
 
 
 	if (IsKeyDown(KEY_W))
 	{
-		velocity = velocity + ({ 0, 100 });
+		direction = direction + MathLibrary::Vector2 (0,-1);
+		
 	}
-
 	if (IsKeyDown(KEY_A))
 	{
-		velocity = velocity + ({ -100, 0 });
-	
+		direction = direction + MathLibrary::Vector2 (-1, 0);
+		
+	}
 	if (IsKeyDown(KEY_S))
 	{
-		velocity = velocity + ({ 100, 0 });
+		direction = direction + MathLibrary::Vector2 (0,1);
+	
 	}
 
 	if (IsKeyDown(KEY_D))
 	{
-		velocity = velocity + ({ 0, -100 });
+		direction = direction + MathLibrary::Vector2 (1,0);
 	}
 	
-	moveComponent->setVelocity({ 0, 0 });
+	if (IsKeyDown(KEY_Q))
+	{
+		getTransform()->rotate(1*deltaTime);
+	}
+	if (IsKeyDown(KEY_E))
+	{
+		getTransform()->rotate(-1 * deltaTime);
+	}
 
+	velocity = direction.getNormalized() * m_moveSpeed;
+	moveComponent->setVelocity(velocity);
+
+	std::cout << velocity.x << ", ";
+	std::cout << velocity.y << std::endl;
 }
 

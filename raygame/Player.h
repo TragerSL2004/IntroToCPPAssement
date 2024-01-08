@@ -11,7 +11,7 @@ public:
 		
 	void update(float deltaTime) override;
 
-	Player(float health, MovementComponent* MoveComponent);
+	Player(float health, MovementComponent* MoveComponent, float movementSpeed);
 
 
 
@@ -19,7 +19,7 @@ public:
 
 
 private:
-
+	float m_moveSpeed;
 };
 
 

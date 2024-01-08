@@ -11,11 +11,3 @@ Character::Character(float health, MovementComponent* characterMove)
 {
 	m_health = health;
 }
-
-void Character::draw()
-{
-	MathLibrary::Vector2 position = getTransform()->getWorldPosition();
-	float radius = getTransform()->getScale().x;
-
-	DrawCircle(position.x, position.y, radius, WHITE);
-}

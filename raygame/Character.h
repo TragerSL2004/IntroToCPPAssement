@@ -14,8 +14,6 @@ public:
 
     float getHealth() { return m_health; }
 
-    void draw() override;
-
 private:
     float m_health;
 };

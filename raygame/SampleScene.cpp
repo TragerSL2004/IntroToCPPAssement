@@ -5,14 +5,11 @@
 #include "Player.h"
 void SampleScene::start()
 {
-	Player* test = new Player(50, nullptr);
+	Player* test = new Player(50, nullptr, 100);
 	test->addComponent(new SpriteComponent(test, "Images/player.png"));
 	test->getTransform()->setScale({ 50, 50 });
 	MovementComponent* testMove = (MovementComponent*)test->addComponent(new MovementComponent(50, test));
 
 
-
-
-	
 	addActor(test);
 }
