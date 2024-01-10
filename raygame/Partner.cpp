@@ -1,8 +1,4 @@
 #include "Partner.h"
 #include "Transform2D.h"
+#include "raylib.h"
 
-void Partner::SetOwner(Character* owner)
-{
-	{owner = m_parent; }
-	;
-}

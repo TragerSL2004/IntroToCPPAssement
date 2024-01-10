@@ -50,6 +50,15 @@ void Player::update(float deltaTime)
 		getTransform()->rotate(-1 * deltaTime);
 	}
 
+	if (IsKeyPressed(KEY_UP))
+	{
+		getTransform()->scale({ 1.5f, 1.5f });
+	}
+	if (IsKeyPressed(KEY_DOWN))
+	{
+		getTransform()->scale({ -0.5f, -0.5f });
+	}
+
 	velocity = direction.getNormalized() * m_moveSpeed;
 	moveComponent->setVelocity(velocity);
 
