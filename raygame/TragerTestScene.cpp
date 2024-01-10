@@ -14,18 +14,15 @@ void TragerTestScene::start()
 	MovementComponent* enemyMove = (MovementComponent*)enemy->addComponent(new MovementComponent(50, enemy));;
 	enemyMove->setVelocity({ 50, 50 });
 
-	MathLibrary::Vector2 enemyScale = MathLibrary::Vector2(50, 50);
+	MathLibrary::Vector2 enemyScale = MathLibrary::Vector2(10, 10);
 
 	enemy->getTransform()->setScale(enemyScale);
 	addActor(enemy);
 
 	Partner* partner = new Partner();
 
-	MovementComponent* partnerMove = (MovementComponent*)partner->addComponent(new MovementComponent(50, partner));
-
-	partnerMove->setVelocity({ 0, 50 });
-
-	MathLibrary::Vector2 scale = MathLibrary::Vector2(50, 50);
+	MathLibrary::Vector2 scale = MathLibrary::Vector2(75, 25);
 	partner->getTransform()->setScale(scale);
 	addActor(partner);
+	enemy->getTransform()->addChild(partner->getTransform());
 }
