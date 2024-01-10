@@ -65,6 +65,9 @@
     <ClCompile Include="Partner.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="TragerTestScene.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Scene.h">
@@ -113,6 +116,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Partner.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="TragerTestScene.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
