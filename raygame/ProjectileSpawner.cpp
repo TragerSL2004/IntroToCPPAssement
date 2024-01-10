@@ -10,7 +10,7 @@ ProjectileSpawner::ProjectileSpawner(Actor* owner, float projectileSpeed)
 
 void ProjectileSpawner::SpawnProjectile()
 {
-	Bullet* bullet = new Bullet("Images/bullet.png", m_owner, m_projectileSpeed, 100, m_owner->getTransform()->getForward());
+	Bullet* bullet = new Bullet("Images/drag.png", m_owner, m_projectileSpeed, 100, m_owner->getTransform()->getForward());
 	Engine::getCurrentScene()->addActor(bullet);
 
 	std::cout << bullet->getTransform()->getLocalPosition().x << ", ";

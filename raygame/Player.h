@@ -20,6 +20,7 @@ public:
 
 
 private:
+
 	float m_moveSpeed;
 	ProjectileSpawner* m_spawner;
 };

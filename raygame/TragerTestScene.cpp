@@ -30,7 +30,7 @@ void TragerTestScene::start()
 
 	Player* test = new Player(50, nullptr, 100);
 
-	test->addComponent(new SpriteComponent(test, "Images/player.png"));
+	test->addComponent(new SpriteComponent(test, "Images/sylas.png"));
 	test->getTransform()->setScale({ 20, 20 });
 	
 	MovementComponent* testMove = (MovementComponent*)test->addComponent(new MovementComponent(50, test));
