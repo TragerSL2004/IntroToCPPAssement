@@ -7,7 +7,6 @@ class Partner :
     public Character
 {
 public: 
-    void SetOwner(Character* owner);
 
 private:
     ProjectileSpawner* m_partnerSpawner;
