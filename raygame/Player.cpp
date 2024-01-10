@@ -3,9 +3,11 @@
 #include <iostream>
 #include "Transform2D.h"
 
+
 Player::Player(float health, MovementComponent* MoveComponent, float movementspeed)
 {
 	m_moveSpeed = movementspeed;
+	m_spawner = new ProjectileSpawner(this, 50);
 }
 
 void Player::update(float deltaTime)
@@ -25,7 +27,7 @@ void Player::update(float deltaTime)
 		direction = direction + MathLibrary::Vector2 (0,-1);
 		
 	}
-	if (IsKeyDown(KEY_A))y
+	if (IsKeyDown(KEY_A))
 	{
 		direction = direction + MathLibrary::Vector2 (-1, 0);
 		
@@ -59,10 +61,17 @@ void Player::update(float deltaTime)
 		getTransform()->scale({ -0.5f, -0.5f });
 	}
 
+	if (IsKeyPressed(KEY_SPACE))
+	{
+		m_spawner->SpawnProjectile();
+	}
+
+
+
+
 	velocity = direction.getNormalized() * m_moveSpeed;
 	moveComponent->setVelocity(velocity);
 
-	std::cout << velocity.x << ", ";
-	std::cout << velocity.y << std::endl;
+	
 }
 
