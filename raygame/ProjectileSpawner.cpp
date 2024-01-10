@@ -1,19 +1,20 @@
 #include "ProjectileSpawner.h"
+#include "Engine.h"
+#include <iostream>
 
-
-ProjectileSpawner::ProjectileSpawner(Actor owner, float projectileSpeed, Actor sprite)
+ProjectileSpawner::ProjectileSpawner(Actor* owner, float projectileSpeed)
 {
 	m_owner = owner;
 	m_projectileSpeed = projectileSpeed;
-	m_sprite = sprite;
 }
 
 void ProjectileSpawner::SpawnProjectile()
 {
-	Bullets* bullet = new Bullets(m_owner, m_projectileSpeed, m_sprite);
+	Bullet* bullet = new Bullet("Images/bullet.png", m_owner, m_projectileSpeed, 100, m_owner->getTransform()->getForward());
+	Engine::getCurrentScene()->addActor(bullet);
 
-	CircleCollider* bulletCollider = new CircleCollider(10, bullet);
-
-	bulletCollider
+	std::cout << bullet->getTransform()->getLocalPosition().x << ", ";
+	std::cout << bullet->getTransform()->getLocalPosition().y << std::endl;
+	
 }
 

@@ -1,5 +1,6 @@
 #pragma once
 #include "Character.h"
+#include "ProjectileSpawner.h"
 #include "Movement.h"
 
 
@@ -20,6 +21,7 @@ public:
 
 private:
 	float m_moveSpeed;
+	ProjectileSpawner* m_spawner;
 };
 
 
