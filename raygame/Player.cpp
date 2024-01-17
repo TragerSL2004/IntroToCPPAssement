@@ -25,7 +25,7 @@ void Player::update(float deltaTime)
 		direction = direction + MathLibrary::Vector2 (0,-1);
 		
 	}
-	if (IsKeyDown(KEY_A))y
+	if (IsKeyDown(KEY_A))
 	{
 		direction = direction + MathLibrary::Vector2 (-1, 0);
 		
