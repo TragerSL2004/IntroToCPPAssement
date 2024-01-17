@@ -1,5 +1,6 @@
 #include "Bullets.h"
 #include <iostream>
+#include "Engine.h"
 
 
 
@@ -23,6 +24,21 @@ void Bullet::update(float deltaTime)
   m_move->setVelocity(m_moveDirection.getNormalized() * m_speed);
   
   Actor::update(deltaTime);
+  m_currentTime += deltaTime;
+
+  if (m_currentTime >= m_despawnTime)
+  {
+	  Engine::destroy(this);
+  }
+}
+
+void Bullet::onCollision(Actor* other)
+{
+	if (other == m_owner)
+		return;
+
+	Engine::destroy(other);
+	
 }
 
 

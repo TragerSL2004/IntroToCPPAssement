@@ -13,6 +13,9 @@ void ProjectileSpawner::SpawnProjectile()
 	Bullet* bullet = new Bullet("Images/drag.png", m_owner, m_projectileSpeed, 100, m_owner->getTransform()->getForward());
 	Engine::getCurrentScene()->addActor(bullet);
 
+	CircleCollider* bulletCollider = new CircleCollider(10, bullet);
+	bullet->setCollider(bulletCollider);
+
 	std::cout << bullet->getTransform()->getLocalPosition().x << ", ";
 	std::cout << bullet->getTransform()->getLocalPosition().y << std::endl;
 	

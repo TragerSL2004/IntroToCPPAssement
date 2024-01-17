@@ -14,6 +14,8 @@ public:
 
     float getHealth() { return m_health; }
 
+    void onCollision(Actor* other) override;
+
 private:
     float m_health;
 };
