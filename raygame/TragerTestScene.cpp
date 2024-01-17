@@ -23,9 +23,9 @@ void TragerTestScene::start()
 
 	Partner* partner = new Partner();
 
-	MathLibrary::Vector2 partnerScale = MathLibrary::Vector2(15, 15);
+	MathLibrary::Vector2 partnerScale = MathLibrary::Vector2(0.60, 0.6);
 	partner->getTransform()->setScale(partnerScale);
-	partner->addComponent(new SpriteComponent(partner, "Images/WaterPartnerSpriteSheet.png"));
+	partner->addComponent(new SpriteComponent(partner, "Images/enemy.png"));
 	addActor(partner);
 
 	Player* test = new Player(50, nullptr, 100);
