@@ -1,16 +1,15 @@
 #include "raylib.h"
-#include "Player.h"
+#include "Player2.h"
 #include <iostream>
 #include "Transform2D.h"
 
-
-Player::Player(float health, MovementComponent* MoveComponent, float movementspeed)
+Player2::Player2(float health, MovementComponent* MoveComponent, float movementspeed)
 {
 	m_moveSpeed = movementspeed;
 	m_spawner = new ProjectileSpawner(this, 50);
 }
 
-void Player::update(float deltaTime)
+void Player2::update(float deltaTime)
 {
 	Character::update(deltaTime);
 
@@ -19,59 +18,59 @@ void Player::update(float deltaTime)
 
 	MathLibrary::Vector2 velocity = moveComponent->getVelocity();
 	MathLibrary::Vector2 direction = MathLibrary::Vector2(0, 0);
-	
 
 
-	if (IsKeyDown(KEY_W))
+
+	if (IsKeyDown(KEY_UP))
 	{
-		direction = direction + MathLibrary::Vector2 (0,-1);
-		
+		direction = direction + MathLibrary::Vector2(0, -1);
+
 	}
-	if (IsKeyDown(KEY_A))
+	if (IsKeyDown(KEY_LEFT))
 	{
-		direction = direction + MathLibrary::Vector2 (-1, 0);
-		
+		direction = direction + MathLibrary::Vector2(-1, 0);
+
 	}
-	if (IsKeyDown(KEY_S))
+	if (IsKeyDown(KEY_DOWN))
 	{
-		direction = direction + MathLibrary::Vector2 (0,1);
-	
+		direction = direction + MathLibrary::Vector2(0, 1);
+
 	}
 
-	if (IsKeyDown(KEY_D))
+	if (IsKeyDown(KEY_RIGHT))
 	{
-		direction = direction + MathLibrary::Vector2 (1,0);
+		direction = direction + MathLibrary::Vector2(1, 0);
 	}
-	
-	if (IsKeyDown(KEY_Q))
+
+	if (IsKeyDown(KEY_HOME))
 	{
-		getTransform()->rotate(1*deltaTime);
+		getTransform()->rotate(1 * deltaTime);
 	}
-	if (IsKeyDown(KEY_E))
+	if (IsKeyDown(KEY_INSERT))
 	{
 		getTransform()->rotate(-1 * deltaTime);
 	}
 
-	if (IsKeyPressed(KEY_T))
+	if (IsKeyPressed(KEY_DELETE))
 	{
 		getTransform()->scale({ 1.5f, 1.5f });
 	}
-	if (IsKeyPressed(KEY_Y))
+	if (IsKeyPressed(KEY_END))
 	{
 		getTransform()->scale({ -0.5f, -0.5f });
 	}
 
-	if (IsKeyPressed(KEY_SPACE))
+	if (IsKeyPressed(KEY_BACKSLASH))
 	{
 		m_spawner->SpawnProjectile();
 	}
-	
-	if (IsKeyPressed(KEY_BACKSPACE))
+
+	if (IsKeyPressed(KEY_PAGE_UP))
 	{
 		m_spawner->SpawnProjectile2();
 	}
 
-	if (IsKeyPressed(KEY_NINE))
+	if (IsKeyPressed(KEY_PAGE_DOWN))
 	{
 		m_spawner->SpawnProjectile3();
 	}
@@ -82,6 +81,5 @@ void Player::update(float deltaTime)
 	velocity = direction.getNormalized() * m_moveSpeed;
 	moveComponent->setVelocity(velocity);
 
-	
-}
 
+}

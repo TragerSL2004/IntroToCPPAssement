@@ -6,6 +6,7 @@
 #include "Transform2D.h"
 #include "Movement.h"
 #include "Player.h"
+#include "Player2.h"
 #include "SpriteComponent.h"
 #include "CircleCollider.h"
 
@@ -32,10 +33,40 @@ void TragerTestScene::start()
 	MovementComponent* playerMove = (MovementComponent*)player->addComponent(new MovementComponent(50, player));
 	CircleCollider* playerCollider = new CircleCollider(30, partner);
 	player->setCollider(playerCollider);
-	
 	addActor(player);
+
+
+	Partner* partner2 = new Partner();
+
+	MathLibrary::Vector2 partnerScale2 = MathLibrary::Vector2(2, 2);
+	partner2->getTransform()->setScale(partnerScale2);
+	partner2->addComponent(new SpriteComponent(partner2, "Images/FOREVER.png"));
+
+
+	addActor(partner2);
+
 	player->getTransform()->addChild(partner->getTransform());
+
+
+
 	
+	
+	
+	Player2* player2 = new Player2(50, nullptr, 100);
+
+	player2->addComponent(new SpriteComponent(player2, "Images/toot.png"));
+	player2->getTransform()->setScale({ 20, 20 });
+
+	MovementComponent* playerMove2 = (MovementComponent*)player2->addComponent(new MovementComponent(50, player2));
+	CircleCollider* playerCollider2 = new CircleCollider(30, partner2);
+	player2->setCollider(playerCollider2);
+	addActor(player2);
+	player2->getTransform()->addChild(partner2->getTransform());
+
+
+
+
+
 	Enemy* enemy = new Enemy();
 	MovementComponent* enemyMove = (MovementComponent*)enemy->addComponent(new MovementComponent(50, enemy));
 	enemyMove->setVelocity({ -50, -50 });
