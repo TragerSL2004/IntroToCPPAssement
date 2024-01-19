@@ -160,6 +160,7 @@
     <ClCompile Include="Movement.cpp" />
     <ClCompile Include="Partner.cpp" />
     <ClCompile Include="Player.cpp" />
+    <ClCompile Include="Player2.cpp" />
     <ClCompile Include="ProjectileSpawner.cpp" />
     <ClCompile Include="SampleScene.cpp" />
     <ClCompile Include="Scene.cpp" />
@@ -181,6 +182,7 @@
     <ClInclude Include="Movement.h" />
     <ClInclude Include="Partner.h" />
     <ClInclude Include="Player.h" />
+    <ClInclude Include="Player2.h" />
     <ClInclude Include="ProjectileSpawner.h" />
     <ClInclude Include="SampleScene.h" />
     <ClInclude Include="Scene.h" />
