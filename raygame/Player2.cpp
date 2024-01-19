@@ -3,10 +3,11 @@
 #include <iostream>
 #include "Transform2D.h"
 
-Player2::Player2(float health, MovementComponent* MoveComponent, float movementspeed)
+Player2::Player2(float health, MovementComponent* MoveComponent, float movementSpeed, float x, float y, const char* name): Character(health, MoveComponent, x, y, name)
 {
-	m_moveSpeed = movementspeed;
+	m_moveSpeed = movementSpeed;
 	m_spawner = new ProjectileSpawner(this, 50);
+	m_name = name;
 }
 
 void Player2::update(float deltaTime)

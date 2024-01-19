@@ -12,7 +12,7 @@ public:
 
 	void update(float deltaTime) override;
 
-	Player2(float health, MovementComponent* MoveComponent, float movementSpeed);
+	Player2(float health, MovementComponent* MoveComponent, float movementSpeed, float x, float y, const char* name);
 
 
 
@@ -20,8 +20,7 @@ public:
 
 
 private:
-
-	float m_moveSpeed;
+	float m_moveSpeed = 0;
 	ProjectileSpawner* m_spawner;
 };
 

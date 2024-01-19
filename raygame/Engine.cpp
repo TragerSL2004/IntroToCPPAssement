@@ -1,7 +1,6 @@
 #include "Engine.h"
 #include "raylib.h"
 #include "Transform2D.h"
-#include "SampleScene.h"
 #include "TragerTestScene.h"
 
 bool Engine::m_applicationShouldClose = false;

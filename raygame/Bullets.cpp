@@ -34,7 +34,9 @@ void Bullet::update(float deltaTime)
 
 void Bullet::onCollision(Actor* other)
 {
-	if (other == m_owner)
+	if (other->getName() == "player1")
+		return;
+	if (other->getName() == "player2")
 		return;
 
 	Engine::destroy(other);

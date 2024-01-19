@@ -23,7 +23,7 @@ void TragerTestScene::start()
 	partner->addComponent(new SpriteComponent(partner, "Images/WaterPartnerSprite.png"));
 	addActor(partner);
 
-	Player* player = new Player(50, nullptr, 100);
+	Player* player = new Player(50, nullptr, 100, 0, 0, "player1");
 
 	player->addComponent(new SpriteComponent(player, "Images/sylas.png"));
 	player->getTransform()->setScale({ 20, 20 });
@@ -50,7 +50,7 @@ void TragerTestScene::start()
 	
 	
 	
-	Player2* player2 = new Player2(50, nullptr, 100);
+	Player2* player2 = new Player2(50, nullptr, 100, 0, 0, "player2");
 
 	player2->addComponent(new SpriteComponent(player2, "Images/toot.png"));
 	player2->getTransform()->setScale({ 20, 20 });
@@ -65,10 +65,10 @@ void TragerTestScene::start()
 
 
 
-	Enemy* enemy = new Enemy();
-	MovementComponent* enemyMove = (MovementComponent*)enemy->addComponent(new MovementComponent(50, enemy));
+	Enemy* enemy1 = new Enemy();
+	MovementComponent* enemyMove = (MovementComponent*)enemy1->addComponent(new MovementComponent(50, enemy1));
 	enemyMove->setVelocity({ -50, -50 });
-	enemy->getTransform()->setLocalPosition({500, 500});
+	enemy1->getTransform()->setLocalPosition({500, 500});
 
 	MathLibrary::Vector2 enemyScale = MathLibrary::Vector2(25, 25);
 

@@ -16,7 +16,6 @@
     <ClCompile Include="Partner.cpp" />
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="ProjectileSpawner.cpp" />
-    <ClCompile Include="SampleScene.cpp" />
     <ClCompile Include="Scene.cpp" />
     <ClCompile Include="SpriteComponent.cpp" />
     <ClCompile Include="TragerTestScene.cpp" />
@@ -38,7 +37,6 @@
     <ClInclude Include="Partner.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="ProjectileSpawner.h" />
-    <ClInclude Include="SampleScene.h" />
     <ClInclude Include="Scene.h" />
     <ClInclude Include="SpriteComponent.h" />
     <ClInclude Include="TragerTestScene.h" />
