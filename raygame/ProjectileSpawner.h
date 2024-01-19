@@ -15,6 +15,7 @@ public:
 
 	void SpawnProjectile();
 	void SpawnProjectile2();
+	void SpawnProjectile3();
 
 
 
