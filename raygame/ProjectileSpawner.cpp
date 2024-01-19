@@ -21,3 +21,17 @@ void ProjectileSpawner::SpawnProjectile()
 	
 }
 
+void ProjectileSpawner::SpawnProjectile2()
+{
+	Bullet* bullet = new Bullet("Images/yett.png", m_owner, m_projectileSpeed, 100, m_owner->getTransform()->getForward());
+	Engine::getCurrentScene()->addActor(bullet);
+}
+
+
+void ProjectileSpawner::SpawnProjectile3()
+{
+	Bullet* bullet = new Bullet("Images/niinee.png", m_owner, m_projectileSpeed, 100, m_owner->getTransform()->getForward());
+	Engine::getCurrentScene()->addActor(bullet);
+}
+
+

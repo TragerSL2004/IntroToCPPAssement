@@ -65,6 +65,16 @@ void Player::update(float deltaTime)
 	{
 		m_spawner->SpawnProjectile();
 	}
+	
+	if (IsKeyPressed(KEY_BACKSPACE))
+	{
+		m_spawner->SpawnProjectile2();
+	}
+
+	if (IsKeyPressed(KEY_NINE))
+	{
+		m_spawner->SpawnProjectile3();
+	}
 
 
 
