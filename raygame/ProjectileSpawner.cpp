@@ -13,8 +13,13 @@ void ProjectileSpawner::SpawnProjectile()
 	Bullet* bullet = new Bullet("Images/drag.png", m_owner, m_projectileSpeed, 100, m_owner->getTransform()->getForward());
 	Engine::getCurrentScene()->addActor(bullet);
 
-	std::cout << bullet->getTransform()->getLocalPosition().x << ", ";
-	std::cout << bullet->getTransform()->getLocalPosition().y << std::endl;
 	
 }
+
+void ProjectileSpawner::SpawnProjectile2()
+{
+	Bullet* bullet = new Bullet("Images/yett.png", m_owner, m_projectileSpeed, 100, m_owner->getTransform()->getForward());
+	Engine::getCurrentScene()->addActor(bullet);
+}
+
 

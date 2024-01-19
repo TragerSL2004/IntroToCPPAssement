@@ -12,7 +12,10 @@ public:
 
 	ProjectileSpawner(Actor* owner, float projectileSpeed);
 
+
 	void SpawnProjectile();
+	void SpawnProjectile2();
+
 
 
 

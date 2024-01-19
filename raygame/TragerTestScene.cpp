@@ -26,8 +26,8 @@ void TragerTestScene::start()
 
 	Player* player = new Player(50, nullptr, 100);
 
-	test->addComponent(new SpriteComponent(test, "Images/sylas.png"));
-	test->getTransform()->setScale({ 20, 20 });
+	player->addComponent(new SpriteComponent(player, "Images/sylas.png"));
+	player->getTransform()->setScale({ 20, 20 });
 	
 	MovementComponent* playerMove = (MovementComponent*)player->addComponent(new MovementComponent(50, player));
 	CircleCollider* playerCollider = new CircleCollider(30, partner);
